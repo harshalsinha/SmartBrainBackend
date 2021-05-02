@@ -2,7 +2,7 @@
   "name": "NodeJs",
   "version": "1.0.0",
   "description": "",
-  "main": "Script1.js",
+  "main": "Server1.js",
   "scripts": {
     "start": "node Server1.js",
     "start:dev": "nodemon Server1.js"
