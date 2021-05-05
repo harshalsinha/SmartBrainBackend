@@ -11,10 +11,10 @@ const handleRegister = (req, res, bcrypt, db) => {
             email: email,
             password: hash
         }).
-        into('login').
-        returning('email').
+        into("login").
+        returning("email").
         then(() => {
-            return trx('users').
+            return trx("users").
             returning('*').
             insert({
             name: name,
