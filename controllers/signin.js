@@ -5,7 +5,7 @@ const handleSignin = (req, res, bcrypt, db) => {
         res.status(400).json(`Invalid login credentials`)
     }
     db.
-    select('password').
+    select('hash').
     from('login').
     where({
         email: email
@@ -22,7 +22,7 @@ const handleSignin = (req, res, bcrypt, db) => {
             res.status(400).json(`Invalid login credentials`)
         }
     }).
-    catch(err => res.status(400).json(`Exception ${err}: Invalid login credentials`))
+    catch(res.status(400).json(`Invalid login credentials`))
 }
 
 module.exports = {
