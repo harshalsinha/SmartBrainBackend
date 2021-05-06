@@ -10,8 +10,8 @@ const handleSignin = (req, res, bcrypt, db) => {
     where({
         email: email
     }).
-    then(passwords => {
-        if(passwords.length && bcrypt.compareSync(password, passwords[0].password))
+    then(hashes => {
+        if(hashes.length && bcrypt.compareSync(password, hashes[0].hash))
         {
             db.select('*').from('users').where({email: email}).then(users => {
                 res.json(users[0])
